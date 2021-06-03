@@ -21,6 +21,8 @@ jobs:
         - { source: "git@github.com:itzg/docker-bungeecord.git", destination: "git@github.com:Bensuperpc/docker-bungeecord.git" }
 # Programs
         - { source: "git@github.com:rick-gnous/Test-MSX.git", destination: "git@github.com:Bensuperpc/Test-MSX.git" }
+# Game
+        - { source: "git@github.com:minetest/minetest.git", destination: "git@github.com:Bensuperpc/minetest.git" }
 
     steps:
     - name: repo-sync branch
