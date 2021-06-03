@@ -1,0 +1,29 @@
+name: repo-sync
+
+on:
+  schedule:
+  - cron:  "* */1 * * *"
+  push:
+  workflow_dispatch:
+
+jobs:
+  repo-sync:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        repos_list:
+        - { source_repo: "https://github.com/itzg/mc-monitor.git", destination_repo: "https://github.com/Bensuperpc/mc-monitor.git" }
+        - { source_repo: "https://github.com/itzg/docker-minecraft-server.git", destination_repo: "https://github.com/Bensuperpc/docker-minecraft-server-1.git" }
+        - { source_repo: "https://github.com/itzg/docker-rcon-web-admin.git", destination_repo: "https://github.com/Bensuperpc/docker-rcon-web-admin.git" }
+        - { source_repo: "https://github.com/itzg/docker-mc-backup.git", destination_repo: "https://github.com/Bensuperpc/docker-mc-backup.git" }
+        - { source_repo: "https://github.com/itzg/docker-bungeecord.git", destination_repo: "https://github.com/Bensuperpc/docker-bungeecord.git" }
+
+    steps:
+    - name: repo-sync
+      uses: wei/git-sync@v3.0.0
+      with:
+        source_repo: ${{ matrix.repos_list.source_repo }}
+        source_branch: "refs/remotes/source/*"
+        destination_repo: ${{ matrix.repos_list.destination_repo }}
+        source_branch: "refs/remotes/source/*"
