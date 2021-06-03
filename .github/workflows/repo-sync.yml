@@ -26,4 +26,4 @@ jobs:
         source_repo: ${{ matrix.repos_list.source }}
         source_branch: "refs/remotes/source/*"
         destination_repo: ${{ matrix.repos_list.destination }}
-        source_branch: "refs/remotes/source/*"
+        destination_branch: "refs/remotes/source/*"
