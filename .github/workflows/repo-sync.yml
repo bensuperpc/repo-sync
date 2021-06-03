@@ -23,11 +23,19 @@ jobs:
         - { source: "git@github.com:rick-gnous/Test-MSX.git", destination: "git@github.com:Bensuperpc/Test-MSX.git" }
 
     steps:
-    - name: repo-sync
+    - name: repo-sync branch
       uses: wei/git-sync@v3.0.0
       with:
         source_repo: ${{ matrix.repos_list.source }}
         source_branch: "refs/remotes/source/*"
         destination_repo: ${{ matrix.repos_list.destination }}
-        destination_branch: "refs/remotes/source/*"
+        destination_branch: "refs/heads/*"
+        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+    - name: repo-sync Tag
+      uses: wei/git-sync@v3.0.0
+      with:
+        source_repo: ${{ matrix.repos_list.source }}
+        source_branch: "refs/tags/*"
+        destination_repo: ${{ matrix.repos_list.destination }}
+        destination_branch: "refs/tags/*"
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
