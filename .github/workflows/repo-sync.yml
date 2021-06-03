@@ -13,11 +13,11 @@ jobs:
       fail-fast: false
       matrix:
         repos_list:
-        - { source: "https://github.com/itzg/mc-monitor.git", destination: "https://github.com/Bensuperpc/mc-monitor.git" }
-        - { source: "https://github.com/itzg/docker-minecraft-server.git", destination: "https://github.com/Bensuperpc/docker-minecraft-server-1.git" }
-        - { source: "https://github.com/itzg/docker-rcon-web-admin.git", destination: "https://github.com/Bensuperpc/docker-rcon-web-admin.git" }
-        - { source: "https://github.com/itzg/docker-mc-backup.git", destination: "https://github.com/Bensuperpc/docker-mc-backup.git" }
-        - { source: "https://github.com/itzg/docker-bungeecord.git", destination: "https://github.com/Bensuperpc/docker-bungeecord.git" }
+        - { source: "git@github.com:itzg/mc-monitor.git", destination: "git@github.com:Bensuperpc/mc-monitor.git" }
+        - { source: "git@github.com:itzg/docker-minecraft-server.git", destination: "git@github.com:Bensuperpc/docker-minecraft-server-1.git" }
+        - { source: "git@github.com:itzg/docker-rcon-web-admin.git", destination: "git@github.com:Bensuperpc/docker-rcon-web-admin.git" }
+        - { source: "git@github.com:itzg/docker-mc-backup.git", destination: "git@github.com:Bensuperpc/docker-mc-backup.git" }
+        - { source: "git@github.com:itzg/docker-bungeecord.git", destination: "git@github.com:Bensuperpc/docker-bungeecord.git" }
 
     steps:
     - name: repo-sync
