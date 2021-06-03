@@ -27,3 +27,4 @@ jobs:
         source_branch: "refs/remotes/source/*"
         destination_repo: ${{ matrix.repos_list.destination }}
         destination_branch: "refs/remotes/source/*"
+        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
