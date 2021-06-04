@@ -21,9 +21,12 @@ jobs:
         - { source: "git@github.com:itzg/docker-bungeecord.git", destination: "git@github.com:Bensuperpc/docker-bungeecord.git" }
 # Programs
         - { source: "git@github.com:rick-gnous/Test-MSX.git", destination: "git@github.com:Bensuperpc/Test-MSX.git" }
-# Game
+        - { source: "git@github.com:dockcross/dockcross.git", destination: "git@github.com:Bensuperpc/dockcross.git" }
+# Minetest game
         - { source: "git@github.com:minetest/minetest.git", destination: "git@github.com:Bensuperpc/minetest.git" }
-
+        - { source: "git@github.com:minetest/minetest_game.git", destination: "git@github.com:Bensuperpc/minetest_game.git" }
+        - { source: "git@github.com:minetest/irrlicht.git", destination: "git@github.com:Bensuperpc/irrlicht.git" }
+        
     steps:
     - name: repo-sync branch
       uses: wei/git-sync@v3.0.0
