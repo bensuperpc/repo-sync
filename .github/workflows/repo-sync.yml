@@ -22,6 +22,7 @@ jobs:
 # Programs
         - { source: "git@github.com:rick-gnous/Test-MSX.git", destination: "git@github.com:Bensuperpc/Test-MSX.git" }
         - { source: "git@github.com:dockcross/dockcross.git", destination: "git@github.com:Bensuperpc/dockcross.git" }
+        - { source: "git@github.com:crosstool-ng/crosstool-ng.git", destination: "git@github.com:bensuperpc/crosstool-ng.git" }
 # Minetest game
         - { source: "git@github.com:minetest/minetest.git", destination: "git@github.com:Bensuperpc/minetest.git" }
         - { source: "git@github.com:minetest/minetest_game.git", destination: "git@github.com:Bensuperpc/minetest_game.git" }
