@@ -21,7 +21,7 @@ jobs:
         - { source: "git@github.com:itzg/docker-bungeecord.git", destination: "git@github.com:Bensuperpc/docker-bungeecord.git" }
 # Programs
         - { source: "git@github.com:rick-gnous/Test-MSX.git", destination: "git@github.com:Bensuperpc/Test-MSX.git" }
-        - { source: "git@github.com:dockcross/dockcross.git", destination: "git@github.com:Bensuperpc/dockcross.git" }
+#        - { source: "git@github.com:dockcross/dockcross.git", destination: "git@github.com:Bensuperpc/dockcross.git" }
         - { source: "git@github.com:crosstool-ng/crosstool-ng.git", destination: "git@github.com:bensuperpc/crosstool-ng.git" }
 # Minetest game
         - { source: "git@github.com:minetest/minetest.git", destination: "git@github.com:Bensuperpc/minetest.git" }
