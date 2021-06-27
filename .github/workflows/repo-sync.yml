@@ -29,6 +29,8 @@ jobs:
         - { source: "git@github.com:minetest/irrlicht.git", destination: "git@github.com:Bensuperpc/irrlicht.git" }
         - { source: "git@github.com:minetest/minetestmapper.git", destination: "git@github.com:Bensuperpc/minetestmapper.git" }   
         - { source: "git@github.com:minetest/contentdb.git", destination: "git@github.com:Bensuperpc/contentdb.git" } 
+# OS
+        - { source: "http://repo.or.cz/kolibrios.git", destination: "git@github.com:bensuperpc/kolibrios.git" } 
     steps:
     - name: repo-sync branch
       uses: wei/git-sync@v3.0.0
