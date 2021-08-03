@@ -10,7 +10,7 @@ jobs:
   repo-sync:
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false
+#      fail-fast: false
       matrix:
         repos_list:
 # Minecraft server
