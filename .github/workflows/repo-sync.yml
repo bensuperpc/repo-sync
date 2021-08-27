@@ -2,7 +2,7 @@ name: repo-sync
 
 on:
   schedule:
-  - cron:  "* */6 * * *"
+    - cron: "* */6 * * *"
   push:
   workflow_dispatch:
 
@@ -13,39 +13,89 @@ jobs:
       fail-fast: false
       matrix:
         repos_list:
-# Minecraft server
-        - { source: "git@github.com:itzg/mc-monitor.git", destination: "git@github.com:Bensuperpc/mc-monitor.git" }
-        - { source: "git@github.com:itzg/docker-minecraft-server.git", destination: "git@github.com:Bensuperpc/docker-minecraft-server-1.git" }
-        - { source: "git@github.com:itzg/docker-rcon-web-admin.git", destination: "git@github.com:Bensuperpc/docker-rcon-web-admin.git" }
-        - { source: "git@github.com:itzg/docker-mc-backup.git", destination: "git@github.com:Bensuperpc/docker-mc-backup.git" }
-        - { source: "git@github.com:itzg/docker-bungeecord.git", destination: "git@github.com:Bensuperpc/docker-bungeecord.git" }
-# Minetest game
-        - { source: "git@github.com:minetest/minetest.git", destination: "git@github.com:Bensuperpc/minetest.git" }
-        - { source: "git@github.com:minetest/minetest_game.git", destination: "git@github.com:Bensuperpc/minetest_game.git" }
-        - { source: "git@github.com:minetest/irrlicht.git", destination: "git@github.com:Bensuperpc/irrlicht.git" }
-        - { source: "git@github.com:minetest/minetestmapper.git", destination: "git@github.com:Bensuperpc/minetestmapper.git" }   
-        - { source: "git@github.com:minetest/contentdb.git", destination: "git@github.com:Bensuperpc/contentdb.git" } 
-# Programs
-        - { source: "git@github.com:dockcross/dockcross.git", destination: "git@github.com:Bensuperpc/dockcross.git" }
-        - { source: "git@github.com:crosstool-ng/crosstool-ng.git", destination: "git@github.com:bensuperpc/crosstool-ng.git" }
-        - { source: "git@github.com:ClangBuiltLinux/tc-build.git", destination: "git@github.com:bensuperpc/tc-build.git" }
-        - { source: "git://repo.or.cz/tinycc.git", destination: "git@github.com:bensuperpc/tinycc.git" }
-# OS
-        - { source: "http://repo.or.cz/kolibrios.git", destination: "git@github.com:bensuperpc/kolibrios.git" } 
+          # Minecraft server
+          - {
+              source: "git@github.com:itzg/mc-monitor.git",
+              destination: "git@github.com:bensuperpc/mc-monitor.git",
+            }
+          - {
+              source: "git@github.com:itzg/docker-minecraft-server.git",
+              destination: "git@github.com:bensuperpc/docker-minecraft-server-1.git",
+            }
+          - {
+              source: "git@github.com:itzg/docker-rcon-web-admin.git",
+              destination: "git@github.com:bensuperpc/docker-rcon-web-admin.git",
+            }
+          - {
+              source: "git@github.com:itzg/docker-mc-backup.git",
+              destination: "git@github.com:bensuperpc/docker-mc-backup.git",
+            }
+          - {
+              source: "git@github.com:itzg/docker-bungeecord.git",
+              destination: "git@github.com:bensuperpc/docker-bungeecord.git",
+            }
+          # Minetest game
+          - {
+              source: "git@github.com:minetest/minetest.git",
+              destination: "git@github.com:bensuperpc/minetest.git",
+            }
+          - {
+              source: "git@github.com:minetest/minetest_game.git",
+              destination: "git@github.com:bensuperpc/minetest_game.git",
+            }
+          - {
+              source: "git@github.com:minetest/irrlicht.git",
+              destination: "git@github.com:bensuperpc/irrlicht.git",
+            }
+          - {
+              source: "git@github.com:minetest/minetestmapper.git",
+              destination: "git@github.com:bensuperpc/minetestmapper.git",
+            }
+          - {
+              source: "git@github.com:minetest/contentdb.git",
+              destination: "git@github.com:bensuperpc/contentdb.git",
+            }
+          # Programs
+          - {
+              source: "git@github.com:dockcross/dockcross.git",
+              destination: "git@github.com:bensuperpc/dockcross.git",
+            }
+          - {
+              source: "git@github.com:crosstool-ng/crosstool-ng.git",
+              destination: "git@github.com:bensuperpc/crosstool-ng.git",
+            }
+          - {
+              source: "git@github.com:ClangBuiltLinux/tc-build.git",
+              destination: "git@github.com:bensuperpc/tc-build.git",
+            }
+          - {
+              source: "git://repo.or.cz/tinycc.git",
+              destination: "git@github.com:bensuperpc/tinycc.git",
+            }
+          # OS
+          - {
+              source: "http://repo.or.cz/kolibrios.git",
+              destination: "git@github.com:bensuperpc/kolibrios.git",
+            }
+          # Others
+          - {
+              source: "git@github.com:TheAlgorithms/C-Plus-Plus.git",
+              destination: "git@github.com:bensuperpc/C-Plus-Plus.git",
+            }
     steps:
-    - name: repo-sync branch
-      uses: wei/git-sync@v3.0.0
-      with:
-        source_repo: ${{ matrix.repos_list.source }}
-        source_branch: "refs/remotes/source/*"
-        destination_repo: ${{ matrix.repos_list.destination }}
-        destination_branch: "refs/heads/*"
-        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-    - name: repo-sync Tag
-      uses: wei/git-sync@v3.0.0
-      with:
-        source_repo: ${{ matrix.repos_list.source }}
-        source_branch: "refs/tags/*"
-        destination_repo: ${{ matrix.repos_list.destination }}
-        destination_branch: "refs/tags/*"
-        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: repo-sync branch
+        uses: wei/git-sync@v3.0.0
+        with:
+          source_repo: ${{ matrix.repos_list.source }}
+          source_branch: "refs/remotes/source/*"
+          destination_repo: ${{ matrix.repos_list.destination }}
+          destination_branch: "refs/heads/*"
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: repo-sync Tag
+        uses: wei/git-sync@v3.0.0
+        with:
+          source_repo: ${{ matrix.repos_list.source }}
+          source_branch: "refs/tags/*"
+          destination_repo: ${{ matrix.repos_list.destination }}
+          destination_branch: "refs/tags/*"
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
