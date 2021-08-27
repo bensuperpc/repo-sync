@@ -3,6 +3,16 @@ name: submodule-update
 on:
   schedule:
     - cron: "0 0 * * 0"
+  push:
+    branches:
+      - "*"
+    paths-ignore:
+      - "**.md"
+  pull_request:
+    branches:
+      - "*"
+    paths-ignore:
+      - "**.md"
   workflow_dispatch:
 
 jobs:
