@@ -86,10 +86,10 @@ jobs:
               source: "http://repo.or.cz/kolibrios.git",
               destination: "git@github.com:bensuperpc/kolibrios.git",
             }
-          # Others
+          # Scripts
           - {
-              source: "git@github.com:TheAlgorithms/C-Plus-Plus.git",
-              destination: "git@github.com:bensuperpc/C-Plus-Plus.git",
+              source: "git@github.com:bensuperpc/gogrepoc.git",
+              destination: "git@github.com:bensuperpc/gogrepoc.git",
             }
     steps:
       - name: repo-sync branch
