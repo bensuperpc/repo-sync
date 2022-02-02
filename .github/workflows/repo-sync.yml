@@ -77,15 +77,15 @@ jobs:
               source: "git@github.com:ClangBuiltLinux/tc-build.git",
               destination: "git@github.com:bensuperpc/tc-build.git",
             }
-          - {
-              source: "git://repo.or.cz/tinycc.git",
-              destination: "git@github.com:bensuperpc/tinycc.git",
-            }
+#          - {
+#              source: "git://repo.or.cz/tinycc.git",
+#              destination: "git@github.com:bensuperpc/tinycc.git",
+#            }
           # OS
-          - {
-              source: "http://repo.or.cz/kolibrios.git",
-              destination: "git@github.com:bensuperpc/kolibrios.git",
-            }
+#          - {
+#              source: "http://repo.or.cz/kolibrios.git",
+#              destination: "git@github.com:bensuperpc/kolibrios.git",
+#            }
           # Scripts
           - {
               source: "git@github.com:bensuperpc/gogrepoc.git",
