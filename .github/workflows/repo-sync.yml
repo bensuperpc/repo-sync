@@ -39,10 +39,10 @@ jobs:
               source: "git@github.com:itzg/docker-mc-backup.git",
               destination: "git@github.com:bensuperpc/docker-mc-backup.git",
             }
-          - {
-              source: "git@github.com:itzg/docker-bungeecord.git",
-              destination: "git@github.com:bensuperpc/docker-bungeecord.git",
-            }
+          #- {
+          #    source: "git@github.com:itzg/docker-bungeecord.git",
+          #    destination: "git@github.com:bensuperpc/docker-bungeecord.git",
+          #  }
           # Minetest game
           - {
               source: "git@github.com:minetest/minetest.git",
